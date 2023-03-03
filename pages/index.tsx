@@ -105,9 +105,9 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="absolute w-4 h-40 bg-[#21DA49]/40 blur-xl top-0 -left-4 z-0"></div>
+            <div className="absolute w-40 h-40 bg-[#21DA49]/40 blur-3xl -top-2 -left-4 z-0"></div>
             <div className="absolute w-4 h-40 bg-[#21DA49]/40 blur-xl bottom-16 -left-4 z-0"></div>
-
+            <div className="absolute w-3 h-40 bg-[#21DA49]/60 blur-xl top-1/2 -right-4 z-0"></div>
           </div>
         </div>
       </main>
