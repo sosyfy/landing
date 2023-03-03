@@ -1,84 +1,116 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Feature from '../components/FeatureWithImage'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="relative">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main className="flex flex-col mx-auto items-center max-w-[640px]">
+        <div className="bg-[#121A35]  px-5 py-8">
+          <div className=' text-center'>
+            <h1 className="px-4 text-4xl font-bold text-white">Cancel on your</h1>
+            <h1 className="px-4 text-4xl font-bold text-[#21DA49]">Friends</h1>
+            <p className='mt-4 text-lg font-semibold leading-7 tracking-tight text-white/80'>Making cancelling plans easier.</p>
+            <p className='text-lg font-semibold leading-7 tracking-tight text-white/80'>All the joy, none of the guilt.</p>
+          </div>
+          <div className="rounded-lg bg-[#1A2754] px-4 shadow py-3 mt-16 relative">
+            <form>
+              <div className='form-group mb-5'>
+                <label htmlFor="plan" className="block text-sm mt-2 font-normal text-white mb-2">
+                  Plan to cancel
+                </label>
+                <select
+                  id="plan"
+                  name="plan"
+                  className="block w-full  py-2 pl-2 rounded-md border-gray-300 text-base  focus:outline-none"
+                  defaultValue="Birthday"
+                >
+                  <option className='w-fit'>Birthday</option>
+                </select>
+              </div>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+              <div className='form-group mb-6'>
+                <label htmlFor="excuse" className="block  text-sm font-normal text-white mb-2">
+                  Excuse
+                </label>
+                <select
+                  id="excuse"
+                  name="excuse"
+                  className="mt-1 block w-full  py-2 pl-2 rounded-md border-gray-300 text-base  focus:outline-none"
+                  defaultValue=""
+                >
+                  <option>I'm pregnant again</option>
+                </select>
+              </div>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+              <div className='form-group mb-6'>
+                <label htmlFor="tone" className="block text-sm font-normal mb-2 text-white">
+                  Tone
+                </label>
+                <select
+                  id="tone"
+                  name="tone"
+                  className="block w-full  py-2 pl-2 rounded-md border-gray-300 text-base  focus:outline-none"
+                  defaultValue=""
+                >
+                  <option>Angry</option>
+                </select>
+              </div>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
+              <div className='form-group mb-6' >
+                <label htmlFor="blame" className="block text-sm font-normal text-white mb-2">
+                  Blame
+                </label>
+                <select
+                  id="blame"
+                  name="blame"
+                  className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base"
+                  defaultValue=""
+                >
+                  <option>You never believed in me</option>
+                </select>
+              </div>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+              <div className="buttons">
+                <button type="submit" className='w-full py-3  rounded-md mb-5 text-center font-medium text-white text-[15px] bg-[#40D260]/70'>Justify your negligence</button>
+                <button type='button' className='w-full py-3  rounded-md mb-3 text-center font-medium text-white text-[15px] bg-gradient-to-r from-[#AC62E6] to-[#9755CB]'>Random</button>
+              </div>
+            </form>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+            <div className="mt-4">
+              <h1 className="mb-3 text-lg font-semibold text-white">Result:</h1>
+              <div className="rounded bg-[#D9D9D933]/20 relative px-3 py-4">
+                <div className="icon absolute top-2 h-9 w-9 flex items-center justify-center right-3 bg-white rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                  </svg>
+                </div>
+                <div className="text-white font-semibold">
+                  <p>Hey _ _ _ _ , </p>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                  <p className='my-3'>I'm sorry to let you know this but I won't be able to attend your bar mitzvah. Unfortunately, I was attacked in the street last night anddrake flew me out to the hospital. I'm really grateful for the help he gave me, but I can't go to your party now.</p>
+
+                  <p className='mb-3'>I hope you have a great day!</p>
+
+                  <p>Sincerely, _ _ _ _</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute w-4 h-40 bg-[#21DA49]/40 blur-xl top-0 -left-4 z-0"></div>
+            <div className="absolute w-4 h-40 bg-[#21DA49]/40 blur-xl bottom-16 -left-4 z-0"></div>
+
+          </div>
         </div>
       </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
     </div>
   )
 }
